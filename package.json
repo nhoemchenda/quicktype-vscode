@@ -1,5 +1,5 @@
 {
-    "name": "quicktype",
+    "name": "quicktype-chenda",
     "displayName": "Paste JSON as Code",
     "description": "Copy JSON, paste as Go, TypeScript, C#, C++ and more.",
     "version": "0.1.0",
@@ -82,6 +82,16 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Convert stringified booleans into booleans, and back."
+                },
+                "quicktype.allPropertiesOptional": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Make all class property optional"
+                },
+                "quicktype.prependSubTypeWithRoot": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Prepend Sub Type with Root Name"
                 }
             }
         },

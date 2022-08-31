@@ -144,7 +144,8 @@ async function runQuicktype(
         inferMaps: configuration.inferMaps,
         inferEnums: configuration.inferEnums,
         inferDateTimes: configuration.inferDateTimes,
-        inferIntegerStrings: configuration.inferIntegerStrings
+        inferIntegerStrings: configuration.inferIntegerStrings,
+        allPropertiesOptional: configuration.allPropertiesOptional
     };
     for (const flag of inferenceFlagNames) {
         if (typeof configuration[flag] === "boolean") {
@@ -326,7 +327,7 @@ class CodeProvider implements vscode.TextDocumentContentProvider {
             if (!this._isOpen) return;
 
             this._onDidChange.fire(this.uri);
-        } catch (e) {}
+        } catch (e) { }
     }
 
     provideTextDocumentContent(_uri: vscode.Uri, _token: vscode.CancellationToken): vscode.ProviderResult<string> {
