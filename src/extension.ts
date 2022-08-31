@@ -17,7 +17,7 @@ import {
     RendererOptions,
     Options,
     inferenceFlagNames
-} from "quicktype-core";
+} from "./quicktype-core/dist";
 import { schemaForTypeScriptSources } from "quicktype-typescript-input";
 import * as persist from "node-persist";
 
@@ -145,7 +145,8 @@ async function runQuicktype(
         inferEnums: configuration.inferEnums,
         inferDateTimes: configuration.inferDateTimes,
         inferIntegerStrings: configuration.inferIntegerStrings,
-        allPropertiesOptional: configuration.allPropertiesOptional
+        allPropertiesOptional: configuration.allPropertiesOptional,
+        prependSubTypeWithRoot: configuration.prependSubTypeWithRoot
     };
     for (const flag of inferenceFlagNames) {
         if (typeof configuration[flag] === "boolean") {
